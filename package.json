@@ -1,0 +1,10 @@
+{
+  "name": "acupoint-j",
+  "version": "0.1.0",
+  "description": "2岁儿童穴位立体图 - 小儿推拿辅助工具（静态网站，零依赖）",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
