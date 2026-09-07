@@ -1,5 +1,14 @@
 // 穴位/手法数据 —— 内容依据处方原文 + 权威小儿推拿资料整理，详见 SOURCES.md。
-// coordinates 字段留待 Phase 2（制作插画后）再标定，此处先为 null。
+//
+// 坐标说明（Phase 2 标定，对应 assets/img 下的四张 SVG 插画，viewBox 均以百分比 0~100 表示，
+// 与图片实际像素尺寸无关，方便响应式缩放）：
+//   view: 'front' | 'back' -> 对应 body-front.svg / body-back.svg（300x600 视窗换算成百分比）
+//   view: 'hand'           -> 对应 hand-closeup.svg（400x400 视窗换算成百分比）
+//   view: 'foot'           -> 对应 foot-sole.svg（300x400 视窗换算成百分比）
+//
+// type: 'point' 的穴位用 coordinates 表示（一个或多个 {x,y} 点，双侧穴位/多点穴位有多个坐标）。
+// type: 'line'  的手法用 path 表示（一条或多条折线，每条折线是若干 {x,y} 路径点的数组）。
+// 两个字段互斥：point 类型的 path 恒为 null，line 类型的 coordinates 恒为 null。
 
 export const acupoints = [
   {
@@ -8,7 +17,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'back',
-    coordinates: null,
+    coordinates: [{ x: 40, y: 24.17 }, { x: 60, y: 24.17 }],
+    path: null,
     location: '在后颈部，枕骨正下方，胸锁乳突肌与斜方肌之间的凹陷处，与耳垂大致齐平（后脑勺发际两侧，用手摸有一个凹窝的位置）。',
     technique: '拿法：用拇指与食指、中指相对用力，轻轻提拿两侧风池穴；新手也可先用拇指指腹在两侧做轻柔按揉。',
     duration: '拿法 3~5 次；若改用按揉，可做 20~30 次。',
@@ -23,7 +33,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'back',
-    coordinates: null,
+    coordinates: [{ x: 35, y: 29.67 }, { x: 65, y: 29.67 }],
+    path: null,
     location: '大椎穴（低头时脖子根部最突出的骨头下方）与肩峰连线的中点，也就是脖子根到肩膀外侧连线中点的肩部肌肉处。',
     technique: '拿法：用拇指与食指相对用力，捏起肩上的一把肌肉，轻轻提拿。',
     duration: '5~10 次。',
@@ -38,7 +49,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'back',
-    coordinates: null,
+    coordinates: [{ x: 50, y: 10 }],
+    path: null,
     location: '后脑正中线上，后脑勺最高突起的骨头（枕外隆凸）上缘的凹陷处。',
     technique: '按揉法：用指腹在该处轻轻按揉。',
     duration: '20~30 次。',
@@ -53,7 +65,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'back',
-    coordinates: null,
+    coordinates: [{ x: 38.33, y: 10 }, { x: 61.67, y: 10 }],
+    path: null,
     location: '后脑部，与脑户穴左右两侧相平，风池穴正上方。',
     technique: '按揉法：用指腹轻轻按揉。',
     duration: '20~30 次。',
@@ -68,7 +81,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'back',
-    coordinates: null,
+    coordinates: [{ x: 50, y: 26.33 }],
+    path: null,
     location: '后颈部正中线上，后发际正中直上约 0.5 寸处（后脑勺发际线正中间的凹陷处）。',
     technique: '按揉法：用指腹轻轻按揉，不可用力按压。',
     duration: '20~30 次。',
@@ -83,7 +97,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 35, y: 14.17 }, { x: 65, y: 14.17 }],
+    path: null,
     location: '眉梢与外眼角连线中点，向后大约一横指的凹陷处，左右各一（太阳穴）。',
     technique: '揉法：用两手拇指或中指指端分别按揉左右两侧太阳穴，向眼睛方向揉为补，向耳后方向揉为泻；日常保健不必严格区分补泻，轻柔打圈按揉即可。',
     duration: '约 30 次。',
@@ -98,7 +113,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 50, y: 4.67 }],
+    path: null,
     location: '头顶正中线与两耳尖连线的交点，即头顶正中最高点。',
     technique: '按揉法：用拇指指腹轻轻按揉。',
     duration: '20~30 次。',
@@ -113,7 +129,13 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [
+      { x: 50, y: 6.67 },
+      { x: 50, y: 2.67 },
+      { x: 45.33, y: 4.67 },
+      { x: 54.67, y: 4.67 }
+    ],
+    path: null,
     location: '百会穴前、后、左、右各旁开约 1 寸处，共 4 个点，围在百会穴周围。',
     technique: '按揉法：用手指指腹依次轻柔按揉这 4 个点，力度缓和均匀。',
     duration: '每个点 20~30 次，或整体按揉 3~5 分钟。',
@@ -128,7 +150,8 @@ export const acupoints = [
     category: '头部',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 50, y: 22 }],
+    path: null,
     location: '人中沟（鼻子下方、上嘴唇上方的那条竖沟）上三分之一与下三分之二的交界处。',
     technique: '掐法：用拇指指甲轻轻掐按。',
     duration: '3~5 次即可，不需要反复长时间操作。',
@@ -144,6 +167,13 @@ export const acupoints = [
     type: 'line',
     view: 'hand',
     coordinates: null,
+    path: [
+      [{ x: 25, y: 50 }, { x: 35, y: 67.5 }],
+      [{ x: 37.5, y: 20 }, { x: 43.75, y: 55 }],
+      [{ x: 50, y: 15 }, { x: 50, y: 52.5 }],
+      [{ x: 62.5, y: 20 }, { x: 56.25, y: 55 }],
+      [{ x: 73.75, y: 27.5 }, { x: 62.5, y: 57.5 }]
+    ],
     location: '孩子五根手指并拢时，掌心一侧五个指尖到指根的区域：拇指对应脾经、食指对应肝经、中指对应心经、无名指对应肺经、小指对应肾经。',
     technique: '推法：让孩子五指并拢，家长一只手的拇指抵住孩子手背固定，另一只手四指并拢，从孩子指端向指根方向做直推。',
     duration: '100~200 次。',
@@ -159,6 +189,7 @@ export const acupoints = [
     type: 'line',
     view: 'hand',
     coordinates: null,
+    path: [[{ x: 25, y: 50 }, { x: 28.75, y: 57.5 }, { x: 35, y: 67.5 }]],
     location: '拇指桡侧缘，即拇指靠指甲外侧的一条边缘，从指尖到指根。',
     technique: '直推法：将孩子拇指微微屈曲，家长沿孩子拇指桡侧边缘，从指尖推向指根方向直推，这个方向称为"补脾经"（方向相反、从指根推向指尖则是"清脾经"，作用不同，不要弄反）。',
     duration: '100~200 次。',
@@ -174,6 +205,7 @@ export const acupoints = [
     type: 'line',
     view: 'hand',
     coordinates: null,
+    path: [[{ x: 73.75, y: 27.5 }, { x: 68.75, y: 40 }, { x: 62.5, y: 57.5 }]],
     location: '小指掌面（手掌一侧），从指尖到指根的一条线。',
     technique: '直推法：家长用一只手轻轻夹住孩子小指，另一只手拇指从孩子小指指尖推向指根方向直推，称为"补肾经"。',
     duration: '100~300 次（教材参考范围为 100~500 次，新手可从较少次数开始）。',
@@ -188,7 +220,8 @@ export const acupoints = [
     category: '上肢',
     type: 'point',
     view: 'hand',
-    coordinates: null,
+    coordinates: [{ x: 43.75, y: 72.5 }],
+    path: null,
     location: '手掌大鱼际平面中央，也就是大拇指根部下方、手掌靠拇指一侧隆起的肌肉丰厚处。',
     technique: '揉法：用拇指指端在该处轻轻打圈按揉。',
     duration: '100~300 次，新手可从 50~100 次开始，单次操作不宜超过 10 分钟。',
@@ -204,6 +237,10 @@ export const acupoints = [
     type: 'line',
     view: 'front',
     coordinates: null,
+    path: [
+      [{ x: 25, y: 30.83 }, { x: 15, y: 43.33 }, { x: 11.67, y: 55.83 }],
+      [{ x: 75, y: 30.83 }, { x: 85, y: 43.33 }, { x: 88.33, y: 55.83 }]
+    ],
     location: '手三阴经循行在手臂内侧（从胸部走向手掌方向），手三阳经循行在手臂外侧（从手背走向肩、颈方向）。',
     technique: '先用捏拿法从上臂到手腕，轻轻捏拿整条手臂（捏拿上肢）；再用拇指指腹沿手臂内侧（阴经）和外侧（阳经）循行方向轻柔按揉，其中重点部位是内关穴（见下方"内关穴"条目）。',
     duration: '捏拿上肢 2~3 遍；按揉腧穴每处约 20~30 次。',
@@ -218,7 +255,14 @@ export const acupoints = [
     category: '上肢',
     type: 'point',
     view: 'hand',
-    coordinates: null,
+    coordinates: [
+      { x: 25, y: 50 },
+      { x: 37.5, y: 20 },
+      { x: 50, y: 15 },
+      { x: 62.5, y: 20 },
+      { x: 73.75, y: 27.5 }
+    ],
+    path: null,
     location: '十个手指尖端正中，指甲下方约 0.1 寸处，左右手共 10 个点。',
     technique: '掐法：用拇指指甲依次对掐每一个手指尖端。',
     duration: '每个手指 3~5 次。',
@@ -233,7 +277,8 @@ export const acupoints = [
     category: '上肢',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 12.33, y: 53.33 }, { x: 87.67, y: 53.33 }],
+    path: null,
     location: '前臂内侧正中，手腕内侧横纹向上量约两指宽（2寸）的位置，在两条筋之间。',
     technique: '按揉法：用拇指指端按揉；也可以用指甲轻轻掐按（掐法）。',
     duration: '按揉 100~300 次，或掐 3~5 次。',
@@ -249,6 +294,10 @@ export const acupoints = [
     type: 'line',
     view: 'front',
     coordinates: null,
+    path: [
+      [{ x: 40, y: 60.83 }, { x: 36.67, y: 78.33 }, { x: 35, y: 95 }],
+      [{ x: 60, y: 60.83 }, { x: 63.33, y: 78.33 }, { x: 65, y: 95 }]
+    ],
     location: '足三阴经循行在小腿内侧（从脚走向腹部方向），足三阳经循行在小腿外侧（从大腿走向脚背方向）。',
     technique: '先用捏拿法从大腿到脚踝，轻轻捏拿整条腿（捏拿下肢）；再用手掌或拇指沿小腿内侧（阴经）和外侧（阳经）循行方向轻柔按揉，重点部位是足三里、三阴交（见下方对应条目）。',
     duration: '捏拿下肢 2~3 遍；按揉腧穴每处约 20~30 次。',
@@ -263,7 +312,8 @@ export const acupoints = [
     category: '下肢',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 33.33, y: 83.33 }, { x: 66.67, y: 83.33 }],
+    path: null,
     location: '小腿外侧，外膝眼（膝盖骨外下方的凹陷处）下方约 3 寸（约 4 根手指并拢的宽度），胫骨前缘外侧一横指处。',
     technique: '按揉法：用拇指指端按揉。',
     duration: '100~300 次，新手可从 50 次开始。',
@@ -278,7 +328,8 @@ export const acupoints = [
     category: '下肢',
     type: 'point',
     view: 'front',
-    coordinates: null,
+    coordinates: [{ x: 39.33, y: 90.83 }, { x: 60.67, y: 90.83 }],
+    path: null,
     location: '小腿内侧，内踝尖（脚踝内侧突起的骨头）正上方约 3 寸（约 4 根手指并拢的宽度），胫骨后缘。',
     technique: '按揉法：用拇指或食指指端按揉。',
     duration: '100~300 次，新手可从 50 次开始。',
@@ -293,7 +344,8 @@ export const acupoints = [
     category: '下肢',
     type: 'point',
     view: 'foot',
-    coordinates: null,
+    coordinates: [{ x: 50, y: 37.5 }],
+    path: null,
     location: '足底前三分之一与后三分之二交界处的凹陷中（脚掌前部弯曲时出现的凹陷位置）。',
     technique: '揉法：用拇指指端按揉（揉涌泉）；也可以用两拇指交替从足跟向足尖方向推（推涌泉）。',
     duration: '50~200 次。',
@@ -309,6 +361,7 @@ export const acupoints = [
     type: 'line',
     view: 'back',
     coordinates: null,
+    path: [[{ x: 50, y: 60 }, { x: 50, y: 50 }, { x: 50, y: 40 }, { x: 50, y: 28.67 }]],
     location: '后背正中线，从尾骨末端（脊柱最下方）到大椎穴（低头时脖子根部最突出的骨头下方）之间的一条直线。',
     technique: '两手拇指与食指相对，捏起脊柱两侧的皮肤，从下（尾骨）向上（大椎）边捏边向前推进；标准手法讲究"捏三提一"，即每捏三下把皮肤向上提一下，新手可以先只做基本的捏拿推进，熟练后再加提法。',
     duration: '标准操作 5~10 遍，2岁孩子新手操作可先从 3~5 遍开始。',

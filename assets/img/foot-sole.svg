@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-labelledby="footSoleTitle">
+  <title id="footSoleTitle">足底特写插画</title>
+
+  <!-- 脚掌主体（脚底朝向读者） -->
+  <path d="M150,95
+           C110,95 78,130 75,175
+           C72,215 80,250 90,285
+           C98,320 110,355 130,372
+           C142,382 158,382 170,372
+           C190,355 202,320 210,285
+           C220,250 228,215 225,175
+           C222,130 190,95 150,95 Z" fill="#FFD9B3"/>
+
+  <!-- 五个脚趾 -->
+  <ellipse cx="150" cy="55" rx="15" ry="20" fill="#FFDDBB"/>
+  <ellipse cx="118" cy="62" rx="12" ry="17" fill="#FFDDBB"/>
+  <ellipse cx="92" cy="78" rx="10" ry="15" fill="#FFDDBB"/>
+  <ellipse cx="182" cy="62" rx="12" ry="17" fill="#FFDDBB"/>
+  <ellipse cx="208" cy="78" rx="10" ry="15" fill="#FFDDBB"/>
+
+  <!-- 足弓阴影提示 -->
+  <path d="M110,220 C130,240 170,240 190,220" stroke="#F0BE93" stroke-width="3" fill="none" opacity="0.5"/>
+</svg>

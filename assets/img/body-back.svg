@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600" role="img" aria-labelledby="bodyBackTitle">
+  <title id="bodyBackTitle">卡通小孩背面插画</title>
+
+  <!-- 腿 -->
+  <path d="M120,360 C108,410 104,480 102,565 C102,578 118,580 120,568 C126,480 130,415 138,362 Z" fill="#FFD9B3"/>
+  <path d="M180,360 C192,410 196,480 198,565 C198,578 182,580 180,568 C174,480 170,415 162,362 Z" fill="#FFD9B3"/>
+  <!-- 脚跟 -->
+  <ellipse cx="103" cy="585" rx="22" ry="12" fill="#FFC896"/>
+  <ellipse cx="197" cy="585" rx="22" ry="12" fill="#FFC896"/>
+
+  <!-- 手臂 -->
+  <path d="M78,188 C50,205 42,250 36,320 C34,335 50,340 54,326 C62,262 72,222 96,196 Z" fill="#FFD9B3"/>
+  <path d="M222,188 C250,205 258,250 264,320 C266,335 250,340 246,326 C238,262 228,222 204,196 Z" fill="#FFD9B3"/>
+  <circle cx="37" cy="335" r="16" fill="#FFC896"/>
+  <circle cx="263" cy="335" r="16" fill="#FFC896"/>
+
+  <!-- 后背躯干 -->
+  <path d="M96,185 C80,230 82,300 92,358 C110,372 190,372 208,358 C218,300 220,230 204,185 C185,168 115,168 96,185 Z" fill="#FFE3C2"/>
+
+  <!-- 短裤 -->
+  <path d="M100,340 C100,375 105,390 118,392 C128,393 130,375 134,360 L166,360 C170,375 172,393 182,392 C195,390 200,375 200,340 C170,352 130,352 100,340 Z" fill="#8FC1E3"/>
+
+  <!-- 脊柱线（浅色引导线，非交互元素，实际可点击路径由 JS 按 data.js 坐标绘制） -->
+  <path d="M150,172 C148,230 152,300 150,360" stroke="#E8B98C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- 肩胛骨轮廓提示 -->
+  <path d="M118,210 C128,225 128,245 120,258" stroke="#F2C79E" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M182,210 C172,225 172,245 180,258" stroke="#F2C79E" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- 脖子 -->
+  <rect x="135" y="150" width="30" height="26" rx="10" fill="#FFD9B3"/>
+
+  <!-- 头（后脑） -->
+  <circle cx="150" cy="90" r="65" fill="#FFD9B3"/>
+  <!-- 后脑头发（覆盖大半个头） -->
+  <path d="M85,90 C85,35 110,15 150,15 C190,15 215,35 215,90 C215,120 205,145 190,158 C200,120 195,70 150,68 C105,70 100,120 110,158 C95,145 85,120 85,90 Z" fill="#7A5641"/>
+  <!-- 耳朵 -->
+  <ellipse cx="83" cy="92" rx="9" ry="13" fill="#FFD9B3"/>
+  <ellipse cx="217" cy="92" rx="9" ry="13" fill="#FFD9B3"/>
+</svg>

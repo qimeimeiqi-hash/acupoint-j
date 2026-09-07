@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="handCloseupTitle">
+  <title id="handCloseupTitle">手掌特写插画（掌心朝向读者）</title>
+
+  <!-- 手腕 -->
+  <path d="M175,340 L225,340 L232,385 L168,385 Z" fill="#FFD9B3"/>
+
+  <!-- 手掌 -->
+  <path d="M140,235 C132,270 138,310 165,335 C180,345 220,345 235,335 C262,310 268,270 260,235 C250,205 145,205 140,235 Z" fill="#FFDDBB"/>
+
+  <!-- 五指（粗圆头，胖乎乎的小孩手指） -->
+  <line x1="150" y1="270" x2="100" y2="200" stroke="#FFDDBB" stroke-width="34" stroke-linecap="round"/>
+  <line x1="175" y1="222" x2="150" y2="82" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
+  <line x1="200" y1="212" x2="200" y2="62" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
+  <line x1="225" y1="222" x2="250" y2="82" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
+  <line x1="250" y1="232" x2="295" y2="112" stroke="#FFDDBB" stroke-width="28" stroke-linecap="round"/>
+
+  <!-- 指甲提示（浅色小椭圆，帮助辨认指尖方向） -->
+  <ellipse cx="100" cy="200" rx="9" ry="12" fill="#FFF3E4" opacity="0.9"/>
+  <ellipse cx="150" cy="82" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
+  <ellipse cx="200" cy="62" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
+  <ellipse cx="250" cy="82" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
+  <ellipse cx="295" cy="112" rx="7" ry="10" fill="#FFF3E4" opacity="0.9"/>
+
+  <!-- 大鱼际提示区域（板门穴附近，浅色区分不作为点击元素） -->
+  <ellipse cx="175" cy="290" rx="26" ry="20" fill="#FFC896" opacity="0.5"/>
+
+  <!-- 掌纹装饰 -->
+  <path d="M165,250 C185,265 210,265 235,250" stroke="#F0BE93" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

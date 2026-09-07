@@ -138,7 +138,7 @@ CLAUDE.md                   本规格说明书
 README.md                   项目说明（给未来的自己看）
 ```
 
-### 4.2 数据模型（`data.js` 中每条记录的字段设计）
+### 4.2 数据模型（`assets/js/data.js` 中每条记录的字段设计，Phase 2 已实现并落地）
 ```js
 {
   id: "fengchi",
@@ -146,8 +146,10 @@ README.md                   项目说明（给未来的自己看）
   category: "头部",          // 头部 | 上肢 | 下肢 | 背部
   type: "point",             // point | line
   view: "back",              // front | back | hand | foot
-  position: { x: 42, y: 18 },   // 百分比坐标（point类型），响应式定位
-  // line 类型改用 path: [{x,y}, {x,y}, ...] + directionArrow: true
+  // point 类型：coordinates 是一个或多个 {x,y} 百分比坐标（双侧/多点穴位有多个），line 类型下恒为 null
+  coordinates: [{ x: 40, y: 24.17 }, { x: 60, y: 24.17 }],
+  // line 类型：path 是一条或多条折线，每条折线是若干 {x,y} 百分比路径点，point 类型下恒为 null
+  path: null,
   location: "在后颈部，枕骨下方，与耳垂齐平的凹陷处",
   technique: "拿法：用拇指与食指、中指相对用力，提拿两侧风池穴3~5次",
   duration: "3~5次，力度轻柔",
@@ -158,8 +160,21 @@ README.md                   项目说明（给未来的自己看）
 }
 ```
 
+坐标基准（均为 0~100 的百分比，与图片实际像素无关，方便响应式缩放）：
+- `view: 'front' / 'back'` → 对应 `assets/img/body-front.svg` / `body-back.svg`，原始 viewBox 为 `300x600`
+- `view: 'hand'` → 对应 `assets/img/hand-closeup.svg`，原始 viewBox 为 `400x400`
+- `view: 'foot'` → 对应 `assets/img/foot-sole.svg`，原始 viewBox 为 `300x400`
+
 ### 4.3 视觉与交互
-- 配色：柔和、儿童友好（推荐低饱和度的马卡龙色系），按 4 个部位分类配色 + 图例。
+- 配色：柔和、儿童友好的马卡龙色系。人体插画本身使用暖肤色（#FFD9B3 系）+ 软棕色头发（#7A5641）+ 天蓝色短裤（#8FC1E3）。热区按处方 4 个部位分类配色（Phase 3 渲染热区时使用）：
+  | 部位 | 颜色 | 色值 |
+  |---|---|---|
+  | 头部 | 珊瑚粉 | `#FFB4A2` |
+  | 上肢 | 天空蓝 | `#A2D2FF` |
+  | 下肢 | 薄荷绿 | `#B5EAD7` |
+  | 背部 | 薰衣草紫 | `#CDB4DB` |
+
+  point 类型穴位用实心圆点表示，line 类型手法用同色虚线+箭头表示，图例统一放在每个视图下方。
 - 热区：圆点 + 序号或图标，点击有轻微放大/高亮反馈；移动端热区最小可点击尺寸 ≥ 40px。
 - 经络路线：曲线路径 + 箭头，点击线上任意一段触发详情。
 - 详情弹层：底部抽屉（bottom sheet）样式，适合手机单手操作，可上滑查看完整内容、点击外部关闭。
@@ -207,13 +222,15 @@ README.md                   项目说明（给未来的自己看）
 - [x] 将以上内容整理进 `assets/js/data.js`，21 条记录全部补全
 - [x] 编写 `assets/js/data.test.js`（node:test，14 项测试，覆盖结构校验+具体值断言+边界情况），全部通过
 
-### Phase 2：视觉素材制作
-- [ ] 确定/绘制正面卡通小孩插画（SVG）
-- [ ] 确定/绘制背面插画（SVG）
-- [ ] 绘制手部特写插画（SVG）
-- [ ] 绘制足底特写插画（SVG）
-- [ ] 确定配色方案与部位分类图例
-- [ ] 为每个穴位标定插画上的坐标（point）或路径点（line）
+### Phase 2：视觉素材制作 ✅ 已完成
+- [x] 绘制正面卡通小孩插画（`assets/img/body-front.svg`）
+- [x] 绘制背面插画（`assets/img/body-back.svg`）
+- [x] 绘制手部特写插画（`assets/img/hand-closeup.svg`）
+- [x] 绘制足底特写插画（`assets/img/foot-sole.svg`）
+- [x] 确定配色方案与部位分类图例（见 4.3 节色值表）
+- [x] 为每个穴位标定插画上的坐标（point 用 `coordinates` 数组）或路径点（line 用 `path` 折线数组），已写入 `data.js`
+- [x] 用临时预览页面 + 浏览器截图人工核对全部 21 个热区是否落在插画对应部位上（核对通过，临时预览文件未纳入仓库）
+- [x] 更新 `data.test.js` 覆盖新增的 coordinates/path 结构校验，20 项测试全部通过
 
 ### Phase 3：核心交互开发
 - [ ] 首页 `index.html`（简介+免责声明+入口）
