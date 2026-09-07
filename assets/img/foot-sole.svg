@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-labelledby="footSoleTitle">
-  <title id="footSoleTitle">足底特写插画</title>
+  <title id="footSoleTitle">足底特写示意图（写实解剖图风格）</title>
+  <defs>
+    <radialGradient id="footSkinGrad" cx="32%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#F5DCC3"/>
+      <stop offset="55%" stop-color="#E3B287"/>
+      <stop offset="100%" stop-color="#BE8757"/>
+    </radialGradient>
+  </defs>
 
   <!-- 脚掌主体（脚底朝向读者） -->
   <path d="M150,95
@@ -9,15 +16,16 @@
            C142,382 158,382 170,372
            C190,355 202,320 210,285
            C220,250 228,215 225,175
-           C222,130 190,95 150,95 Z" fill="#FFD9B3"/>
+           C222,130 190,95 150,95 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1.3"/>
 
-  <!-- 五个脚趾 -->
-  <ellipse cx="150" cy="55" rx="15" ry="20" fill="#FFDDBB"/>
-  <ellipse cx="118" cy="62" rx="12" ry="17" fill="#FFDDBB"/>
-  <ellipse cx="92" cy="78" rx="10" ry="15" fill="#FFDDBB"/>
-  <ellipse cx="182" cy="62" rx="12" ry="17" fill="#FFDDBB"/>
-  <ellipse cx="208" cy="78" rx="10" ry="15" fill="#FFDDBB"/>
+  <!-- 五个脚趾（渐窄写实形态） -->
+  <path d="M150,100 C142,88 140,68 150,56 C160,68 158,88 150,100 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1"/>
+  <path d="M120,108 C113,98 111,80 119,68 C128,79 127,98 120,108 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1"/>
+  <path d="M94,122 C88,113 87,98 94,88 C101,98 100,114 94,122 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1"/>
+  <path d="M180,108 C187,98 189,80 181,68 C172,79 173,98 180,108 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1"/>
+  <path d="M206,122 C212,113 213,98 206,88 C199,98 200,114 206,122 Z" fill="url(#footSkinGrad)" stroke="#A8724A" stroke-width="1"/>
 
   <!-- 足弓阴影提示 -->
-  <path d="M110,220 C130,240 170,240 190,220" stroke="#F0BE93" stroke-width="3" fill="none" opacity="0.5"/>
+  <path d="M108,225 C130,248 170,248 192,225" stroke="#A8724A" stroke-width="2" fill="none" opacity="0.4"/>
+  <ellipse cx="150" cy="230" rx="34" ry="26" fill="#C98F5E" opacity="0.18"/>
 </svg>

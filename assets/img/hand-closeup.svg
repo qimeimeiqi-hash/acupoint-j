@@ -1,29 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="handCloseupTitle">
-  <title id="handCloseupTitle">手掌特写插画（掌心朝向读者）</title>
+  <title id="handCloseupTitle">手掌特写示意图（掌心朝向读者，写实解剖图风格）</title>
+  <defs>
+    <radialGradient id="handSkinGrad" cx="32%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#F5DCC3"/>
+      <stop offset="55%" stop-color="#E3B287"/>
+      <stop offset="100%" stop-color="#BE8757"/>
+    </radialGradient>
+  </defs>
 
   <!-- 手腕 -->
-  <path d="M175,340 L225,340 L232,385 L168,385 Z" fill="#FFD9B3"/>
+  <path d="M175,340 L225,340 L232,385 L168,385 Z" fill="url(#handSkinGrad)" stroke="#A8724A" stroke-width="1.2"/>
 
   <!-- 手掌 -->
-  <path d="M140,235 C132,270 138,310 165,335 C180,345 220,345 235,335 C262,310 268,270 260,235 C250,205 145,205 140,235 Z" fill="#FFDDBB"/>
+  <path d="M140,235 C132,270 138,310 165,335 C180,345 220,345 235,335 C262,310 268,270 260,235 C250,205 145,205 140,235 Z" fill="url(#handSkinGrad)" stroke="#A8724A" stroke-width="1.2"/>
 
-  <!-- 五指（粗圆头，胖乎乎的小孩手指） -->
-  <line x1="150" y1="270" x2="100" y2="200" stroke="#FFDDBB" stroke-width="34" stroke-linecap="round"/>
-  <line x1="175" y1="222" x2="150" y2="82" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
-  <line x1="200" y1="212" x2="200" y2="62" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
-  <line x1="225" y1="222" x2="250" y2="82" stroke="#FFDDBB" stroke-width="30" stroke-linecap="round"/>
-  <line x1="250" y1="232" x2="295" y2="112" stroke="#FFDDBB" stroke-width="28" stroke-linecap="round"/>
+  <!-- 五指（自然收窄，非均匀粗细的卡通香肠手指） -->
+  <g stroke-linecap="round">
+    <path d="M150,270 C144,250 128,222 100,202" stroke="url(#handSkinGrad)" stroke-width="30" fill="none"/>
+    <path d="M175,222 C168,190 158,140 150,84" stroke="url(#handSkinGrad)" stroke-width="26" fill="none"/>
+    <path d="M200,212 C200,175 200,120 200,64" stroke="url(#handSkinGrad)" stroke-width="27" fill="none"/>
+    <path d="M225,222 C232,190 242,140 250,84" stroke="url(#handSkinGrad)" stroke-width="26" fill="none"/>
+    <path d="M250,232 C258,205 275,155 295,114" stroke="url(#handSkinGrad)" stroke-width="23" fill="none"/>
+  </g>
+  <!-- 手指外缘阴影，暗示立体感 -->
+  <g stroke="#A8724A" stroke-width="1" opacity="0.5" fill="none">
+    <path d="M108,206 C130,224 144,248 149,266"/>
+    <path d="M158,88 C165,142 174,190 180,220"/>
+    <path d="M208,68 C207,120 206,175 205,210"/>
+    <path d="M242,88 C233,142 226,190 220,220"/>
+    <path d="M287,118 C270,155 256,203 249,229"/>
+  </g>
 
   <!-- 指甲提示（浅色小椭圆，帮助辨认指尖方向） -->
-  <ellipse cx="100" cy="200" rx="9" ry="12" fill="#FFF3E4" opacity="0.9"/>
-  <ellipse cx="150" cy="82" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
-  <ellipse cx="200" cy="62" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
-  <ellipse cx="250" cy="82" rx="8" ry="11" fill="#FFF3E4" opacity="0.9"/>
-  <ellipse cx="295" cy="112" rx="7" ry="10" fill="#FFF3E4" opacity="0.9"/>
+  <ellipse cx="100" cy="200" rx="8" ry="11" fill="#F0DCC8" stroke="#C9A57C" stroke-width="0.8"/>
+  <ellipse cx="150" cy="82" rx="7.5" ry="10" fill="#F0DCC8" stroke="#C9A57C" stroke-width="0.8"/>
+  <ellipse cx="200" cy="62" rx="7.5" ry="10" fill="#F0DCC8" stroke="#C9A57C" stroke-width="0.8"/>
+  <ellipse cx="250" cy="82" rx="7.5" ry="10" fill="#F0DCC8" stroke="#C9A57C" stroke-width="0.8"/>
+  <ellipse cx="295" cy="112" rx="6.5" ry="9" fill="#F0DCC8" stroke="#C9A57C" stroke-width="0.8"/>
 
   <!-- 大鱼际提示区域（板门穴附近，浅色区分不作为点击元素） -->
-  <ellipse cx="175" cy="290" rx="26" ry="20" fill="#FFC896" opacity="0.5"/>
+  <ellipse cx="175" cy="290" rx="26" ry="20" fill="#C98F5E" opacity="0.3"/>
 
-  <!-- 掌纹装饰 -->
-  <path d="M165,250 C185,265 210,265 235,250" stroke="#F0BE93" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- 掌纹 -->
+  <path d="M160,245 C182,262 210,262 238,246" stroke="#A8724A" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <path d="M155,275 C180,286 220,286 245,274" stroke="#A8724A" stroke-width="1" fill="none" opacity="0.4"/>
 </svg>
