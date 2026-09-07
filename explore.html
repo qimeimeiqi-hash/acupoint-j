@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>穴位探索 - 2岁儿童穴位立体图</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>穴位探索</h1>
+    <p class="disclaimer">⚠️ 仅辅助记忆穴位位置与手法，不构成医疗建议，具体请遵医嘱。</p>
+  </header>
+
+  <nav class="view-tabs" id="viewTabs">
+    <button type="button" data-view="front" class="active">正面</button>
+    <button type="button" data-view="back">背面</button>
+    <button type="button" data-view="hand">手部特写</button>
+    <button type="button" data-view="foot">足底特写</button>
+  </nav>
+
+  <main>
+    <div class="stage" id="stage">
+      <img id="stageImage" src="" alt="人体插画">
+      <svg id="lineOverlay" class="line-overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="markerLayer" class="marker-layer"></div>
+    </div>
+    <div class="legend" id="legend"></div>
+  </main>
+
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <div class="detail-sheet" id="detailSheet" hidden>
+    <div class="detail-sheet-inner">
+      <button type="button" class="close-btn" id="closeDetail" aria-label="关闭">✕</button>
+      <h2 id="detailName"></h2>
+      <div class="detail-row">
+        <span class="label">📍 定位</span>
+        <p id="detailLocation"></p>
+      </div>
+      <div class="detail-row">
+        <span class="label">🤚 手法</span>
+        <p id="detailTechnique"></p>
+      </div>
+      <div class="detail-row">
+        <span class="label">⏱ 参考次数/时长</span>
+        <p id="detailDuration"></p>
+      </div>
+      <div class="detail-row">
+        <span class="label">✨ 作用</span>
+        <p id="detailBenefit"></p>
+      </div>
+      <div class="detail-row caution">
+        <span class="label">⚠️ 新手注意事项</span>
+        <p id="detailCaution"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
